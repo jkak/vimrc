@@ -13,6 +13,10 @@ set history=2500
 " line number
 set nu
 
+" :W sudo saves the file
+" (useful for handling the permission-denied error)
+"command W w !sudo tee % > /dev/null
+" above cmd affect tagbar not works. so close it.
 
 """"""""""""""""""""  about neocomplete.vim 
 
@@ -95,4 +99,50 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+
+
+""""""""""""""""" about indentLine
+
+" refer: https://github.com/Yggdroot/indentLine
+" 所有项都注释掉了。因为基本设置中，没有将tab转换为space。故该功能用不上。
+"set expandtab
+"let g:indentLine_setColors = 0
+"let g:indentLine_color_term = 239
+"let g:indentLine_char = '¦'
+"let g:indentLine_concealcursor = 'inc'
+"let g:indentLine_conceallevel = 2
+"let g:indentLine_setConceal = 0
+"let g:indentLine_enabled = 1
+set list lcs=tab:\¦\ 
+"set list lcs=tab:\┆\  
+
+
+""""""""""""""""" about nerdcommenter
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" usage
+" 不使用可视模式选中时：
+"	ctrl+, cc	注释当前行；使用可视模式，选中多行时，则注释多行
+"	ctrl+, cu	取消注释当前行；使用可视模式，选中多行时，则bcii注释多行
+"	ctrl+, c	切换注释与非注释
+"	ctrl+, cA	在当前行末添加注释符，并进入insert模式
 
