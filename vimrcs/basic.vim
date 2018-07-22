@@ -31,7 +31,7 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
-set history=500
+set history=5000
 
 " Enable filetype plugins
 filetype plugin on
@@ -43,6 +43,7 @@ set autoread
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
+let g:mapleader = ","
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -83,6 +84,9 @@ set cmdheight=2
 
 " A buffer becomes hidden when it is abandoned
 set hid
+
+" related number
+"set relativenumber
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
